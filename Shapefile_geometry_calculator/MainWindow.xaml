@@ -1,0 +1,50 @@
+﻿<Window x:Class="Shapefile_geometry_calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shapefile_geometry_calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Width="100" Height="30" Content="Select path" Command="{Binding OpenFolderBrowserCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,35,0,0"/>
+        <TextBlock Text="Selected folder:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="151,40,0,0"/>
+        <TextBlock Text="{Binding PathToDisplay}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="255,40,0,0" Height="20" Width="465">
+          
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="0"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding PathToDisplay}" Value="">
+                            <Setter Property="Margin" Value="10"/>
+
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button Width="50" Height="30" Content="RUN" Command="{Binding RunCalculationCommand}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,35,10,0" Background="Red"/>
+
+        <DataGrid x:Name="resultsDataGrid" ItemsSource="{Binding ResultToDisplay}" AutoGenerateColumns="False" Margin="10,70,400,10" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Shape Name" Binding="{Binding ShapeName}"  IsReadOnly="True" />
+                <DataGridTextColumn Header="Geometry Type" Binding="{Binding GeometryType}"  IsReadOnly="True" />
+                <DataGridTextColumn Header="Result" Binding="{Binding Result}"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="Count" Binding="{Binding Count}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Width="70" Height="30" Content="Summarize" Command="{Binding SummarizeResultsCommand}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,100,10,0" Background="Yellow"/>
+        <Button Width="98" Height="30" Content="Export to table" Command="{Binding ExportToTableCommand}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,296,10,0" Background="Green"/>
+        <ComboBox ItemsSource="{Binding GeometryTypes}"
+                  SelectedItem="{Binding SelectedGeometryType, Mode=TwoWay}"
+                  HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Width="200" Height="30" Margin="565,217,0,0"/>
+        <ComboBox ItemsSource="{Binding ComboBoxItems}"
+                  SelectedItem="{Binding SelectedComboBoxItem, Mode=TwoWay}"
+                  HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Width="200" Height="30" Margin="490,100,0,0"/>
+
+    </Grid>
+
+
+</Window>
