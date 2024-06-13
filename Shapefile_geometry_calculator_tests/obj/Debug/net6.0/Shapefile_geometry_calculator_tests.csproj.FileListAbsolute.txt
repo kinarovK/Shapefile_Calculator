@@ -96,7 +96,6 @@ D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_te
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Hosting.dll
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\System.Windows.Forms.dll
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\DotSpatial.Data.dll
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\NetTopologySuite.dll
@@ -132,7 +131,6 @@ D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_te
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Hosting.xml
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.xml
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\System.Windows.Forms.xml
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Configuration.xml
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.xml
 D:\project\Prog tutorial\Sandbox\SHP_Calculator\Shapefile_geometry_calculator_tests\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.xml

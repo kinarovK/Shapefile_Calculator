@@ -8,6 +8,6 @@ namespace Shapefile_geometry_calculator.Model.Interfaces
 {
     public interface ITableWriter
     {
-         Task ExportToTable(List<Result_Model> results, string folderName, Enum selectedMeasure);
+         Task ExportToTableAsync(List<Result_Model> results, string folderName, Enum selectedMeasure);
     }
 }

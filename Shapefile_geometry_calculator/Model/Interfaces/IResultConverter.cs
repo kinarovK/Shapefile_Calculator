@@ -8,7 +8,7 @@ namespace Shapefile_geometry_calculator.Model.Interfaces
 {
     public interface IResultConverter
     {
-        Task<List<Result_Model>> ConvertPolygonResult(List<Result_Model> results, Enum measureType);
-        Task<List<Result_Model>> ConvertPolylineResult(List<Result_Model> results, Enum measureType);
+        Task<List<Result_Model>> ConvertPolygonResultAsync(List<Result_Model> results, Enum measureType);
+        Task<List<Result_Model>> ConvertPolylineResultAsync(List<Result_Model> results, Enum measureType);
     }
 }

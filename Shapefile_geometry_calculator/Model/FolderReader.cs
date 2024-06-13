@@ -15,11 +15,11 @@ namespace Shapefile_geometry_calculator.Model
         public async Task<List<string>> GetAllShpFromFolder (string folderName)
         {
             List<string> shpFiles = new List<string>();
-            shpFiles = await SearchShpFiles(folderName, shpFiles);
+            shpFiles = await SearchShpFilesAsync(folderName, shpFiles);
 
             return shpFiles;
         }
-        private async Task<List<string>> SearchShpFiles (string folderName, List<string> SHPs)
+        private async Task<List<string>> SearchShpFilesAsync (string folderName, List<string> SHPs)
         {
             try
             {

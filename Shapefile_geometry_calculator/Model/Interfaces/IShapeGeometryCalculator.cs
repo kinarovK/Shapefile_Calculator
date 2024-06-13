@@ -8,7 +8,7 @@ namespace Shapefile_geometry_calculator.Model
 {
     public interface IShapeGeometryCalculator
     {
-         Task<List<Result_Model>> CalculatePolylineGeomerty(List<string> shapeFiles);
-         Task<List<Result_Model>> CalculatePolygonGeomerty(List<string> shapeFiles);
+         Task<List<Result_Model>> CalculatePolylineGeomertyAsync(List<string> shapeFiles);
+         Task<List<Result_Model>> CalculatePolygonGeomertyAsync(List<string> shapeFiles);
     }
 }

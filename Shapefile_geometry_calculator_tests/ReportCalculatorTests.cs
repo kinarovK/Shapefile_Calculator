@@ -26,7 +26,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await reportCalculator.ComputeReport(input);
+            var result = await reportCalculator.ComputeReportAsync(input);
 
             // Assert
             Assert.Equal(1, result.Count);
@@ -49,7 +49,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await reportCalculator.ComputeReport(input);
+            var result = await reportCalculator.ComputeReportAsync(input);
 
             // Assert
             Assert.Equal(3, result.Count);
@@ -74,8 +74,8 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await reportCalculator.ComputeReport(input);
-
+            var result = await reportCalculator.ComputeReportAsync(input);
+            
             // Assert
             Assert.Equal(5, result.Count);
             Assert.Equal(0, result.Sum);
@@ -97,7 +97,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await reportCalculator.ComputeReport(input);
+            var result = await reportCalculator.ComputeReportAsync(input);
 
             // Assert
             Assert.Equal(3, result.Count);

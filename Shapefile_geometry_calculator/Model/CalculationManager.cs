@@ -19,19 +19,19 @@ namespace Shapefile_geometry_calculator.Model
             this.shapeGeometryCalculator = shapeGeometryCalculator;
             this.resultConverter = resultConverter;
         }
-        public async Task<List<Result_Model>> DoCalculation(string folder, GeometryType geometryType, Enum measureType) 
+        public async Task<List<Result_Model>> DoCalculationAsync(string folder, GeometryType geometryType, Enum measureType) 
         {
             var result = new List<Result_Model>();
             var shapeFiles =await folderReader.GetAllShpFromFolder(folder);
             if (geometryType == GeometryType.Polygon)
             {
-                result = await shapeGeometryCalculator.CalculatePolygonGeomerty(shapeFiles);
-                result =  await resultConverter.ConvertPolygonResult(result, measureType);
+                result = await shapeGeometryCalculator.CalculatePolygonGeomertyAsync(shapeFiles);
+                result =  await resultConverter.ConvertPolygonResultAsync(result, measureType);
             }
             else
             {
-                result = await shapeGeometryCalculator.CalculatePolylineGeomerty(shapeFiles);
-                result = await resultConverter.ConvertPolylineResult(result, measureType);
+                result = await shapeGeometryCalculator.CalculatePolylineGeomertyAsync(shapeFiles);
+                result = await resultConverter.ConvertPolylineResultAsync(result, measureType);
             }
             return result;
         }

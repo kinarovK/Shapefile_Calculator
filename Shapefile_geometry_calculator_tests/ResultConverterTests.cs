@@ -23,7 +23,7 @@ namespace Shapefile_geometry_calculator_tests
             var input = new List<Result_Model>();
 
             // Act
-            var result = await resultConverter.ConvertPolygonResult(input, AreaMeasure.Sqrkilometer);
+            var result = await resultConverter.ConvertPolygonResultAsync(input, AreaMeasure.Sqrkilometer);
 
             // Assert
             Assert.Null(result);
@@ -39,7 +39,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolygonResult(input, AreaMeasure.Sqrkilometer);
+            var result = await resultConverter.ConvertPolygonResultAsync(input, AreaMeasure.Sqrkilometer);
 
             // Assert
             Assert.Single(result);
@@ -57,7 +57,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolygonResult(input, AreaMeasure.Sqrkilometer);
+            var result = await resultConverter.ConvertPolygonResultAsync(input, AreaMeasure.Sqrkilometer);
 
             // Assert
             Assert.Equal(2, result.Count);
@@ -75,7 +75,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolygonResult(input, (AreaMeasure)999);
+            var result = await resultConverter.ConvertPolygonResultAsync(input, (AreaMeasure)999);
 
             // Assert
             Assert.Single(result);
@@ -91,7 +91,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolylineResult(input, LenghtMeasure.Meter);
+            var result = await resultConverter.ConvertPolylineResultAsync(input, LenghtMeasure.Meter);
 
             // Assert
             Assert.Single(result);
@@ -107,7 +107,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolylineResult(input, LenghtMeasure.Kilometer);
+            var result = await resultConverter.ConvertPolylineResultAsync(input, LenghtMeasure.Kilometer);
 
             // Assert
             Assert.Single(result);
@@ -121,7 +121,7 @@ namespace Shapefile_geometry_calculator_tests
             var input = new List<Result_Model>();
 
             // Act
-            var result = await resultConverter.ConvertPolylineResult(input, LenghtMeasure.Meter);
+            var result = await resultConverter.ConvertPolylineResultAsync(input, LenghtMeasure.Meter);
 
             // Assert
             Assert.Null(result);
@@ -138,7 +138,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolylineResult(input, LenghtMeasure.Kilometer);
+            var result = await resultConverter.ConvertPolylineResultAsync(input, LenghtMeasure.Kilometer);
 
             // Assert
             Assert.Equal(2, result.Count);
@@ -157,7 +157,7 @@ namespace Shapefile_geometry_calculator_tests
         };
 
             // Act
-            var result = await resultConverter.ConvertPolylineResult(input, LenghtMeasure.Kilometer);
+            var result = await resultConverter.ConvertPolylineResultAsync(input, LenghtMeasure.Kilometer);
 
             // Assert
             Assert.Equal(2, result.Count);

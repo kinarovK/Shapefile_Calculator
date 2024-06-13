@@ -177,7 +177,7 @@ namespace Shapefile_geometry_calculator.ViewModel
             }
             else
             {
-                results = await calculationManager.DoCalculation(path, selectedGeometryType, selectedComboBoxItem);
+                results = await calculationManager.DoCalculationAsync(path, selectedGeometryType, selectedComboBoxItem);
                 if (results == null)
                 {
                     System.Windows.MessageBox.Show("In selected folder shp-s not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -197,7 +197,7 @@ namespace Shapefile_geometry_calculator.ViewModel
                 System.Windows.MessageBox.Show("Results is empty for report", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            reportResult = await reportCalculator.ComputeReport(results);
+            reportResult = await reportCalculator.ComputeReportAsync(results);
             reportResult.FolderName = PathToDisplay;
             if (!isReportWindowOpened )
             {
@@ -222,7 +222,7 @@ namespace Shapefile_geometry_calculator.ViewModel
                 if (fdb.ShowDialog() == DialogResult.OK)
                 {
                     pathToExport = fdb.SelectedPath;
-                    await tableWriter.ExportToTable(results, pathToExport, SelectedComboBoxItem);
+                    await tableWriter.ExportToTableAsync(results, pathToExport, SelectedComboBoxItem);
 
                     System.Windows.MessageBox.Show("Export completed!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 }

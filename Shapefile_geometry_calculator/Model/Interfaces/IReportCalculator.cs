@@ -8,6 +8,6 @@ namespace Shapefile_geometry_calculator.Model.Interfaces
 {
     public interface IReportCalculator
     {
-         Task<ReportResult_Model> ComputeReport(List<Result_Model> input);
+         Task<ReportResult_Model> ComputeReportAsync(List<Result_Model> input);
     }
 }

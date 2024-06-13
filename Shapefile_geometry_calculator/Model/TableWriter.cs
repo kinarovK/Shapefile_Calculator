@@ -13,7 +13,7 @@ namespace Shapefile_geometry_calculator.Model
     internal class TableWriter : ITableWriter
     {
         private string _filePath;
-        public async Task ExportToTable(List<Result_Model> results, string folderName, Enum selectedMeasure)
+        public async Task ExportToTableAsync(List<Result_Model> results, string folderName, Enum selectedMeasure)
         {
             var newFileName = Path.GetDirectoryName(folderName);
             var fileName =DateTime.Now.ToString("yyyy-MM-dd_H-mm-s");

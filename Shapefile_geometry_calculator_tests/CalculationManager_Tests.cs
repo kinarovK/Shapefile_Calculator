@@ -42,20 +42,20 @@ namespace Shapefile_geometry_calculator_tests
             mockFolderReader.Setup(fr => fr.GetAllShpFromFolder(folder))
                             .ReturnsAsync(shapeFiles);
 
-            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomerty(shapeFiles))
+            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles))
                                        .ReturnsAsync(polygonResults);
 
-            mockResultConverter.Setup(rc => rc.ConvertPolygonResult(polygonResults, It.IsAny<Enum>()))
+            mockResultConverter.Setup(rc => rc.ConvertPolygonResultAsync(polygonResults, It.IsAny<Enum>()))
                                .ReturnsAsync(convertedResults);
 
             // Act
-            var result = await calculationManager.DoCalculation(folder, GeometryType.Polygon, AreaMeasure.Hectar);
+            var result = await calculationManager.DoCalculationAsync(folder, GeometryType.Polygon, AreaMeasure.Hectar);
 
             // Assert
             Assert.Equal(convertedResults, result);
             mockFolderReader.Verify(fr => fr.GetAllShpFromFolder(folder), Times.Once);
-            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolygonGeomerty(shapeFiles), Times.Once);
-            mockResultConverter.Verify(rc => rc.ConvertPolygonResult(polygonResults, AreaMeasure.Hectar), Times.Once);
+            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles), Times.Once);
+            mockResultConverter.Verify(rc => rc.ConvertPolygonResultAsync(polygonResults, AreaMeasure.Hectar), Times.Once);
         }
         [Fact]
         public async Task DoCalculation_PolygonGeometryType_CallsCorrectMethods_WithKilometers()
@@ -69,20 +69,20 @@ namespace Shapefile_geometry_calculator_tests
             mockFolderReader.Setup(fr => fr.GetAllShpFromFolder(folder))
                             .ReturnsAsync(shapeFiles);
 
-            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomerty(shapeFiles))
+            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles))
                                        .ReturnsAsync(polygonResults);
 
-            mockResultConverter.Setup(rc => rc.ConvertPolygonResult(polygonResults, It.IsAny<Enum>()))
+            mockResultConverter.Setup(rc => rc.ConvertPolygonResultAsync(polygonResults, It.IsAny<Enum>()))
                                .ReturnsAsync(convertedResults);
 
             // Act
-            var result = await calculationManager.DoCalculation(folder, GeometryType.Polygon, AreaMeasure.Sqrkilometer);
+            var result = await calculationManager.DoCalculationAsync(folder, GeometryType.Polygon, AreaMeasure.Sqrkilometer);
 
             // Assert
             Assert.Equal(convertedResults, result);
             mockFolderReader.Verify(fr => fr.GetAllShpFromFolder(folder), Times.Once);
-            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolygonGeomerty(shapeFiles), Times.Once);
-            mockResultConverter.Verify(rc => rc.ConvertPolygonResult(polygonResults, AreaMeasure.Sqrkilometer), Times.Once);
+            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles), Times.Once);
+            mockResultConverter.Verify(rc => rc.ConvertPolygonResultAsync(polygonResults, AreaMeasure.Sqrkilometer), Times.Once);
         }
         [Fact]
         public async Task DoCalculation_PolygonGeometryType_CallsCorrectMethods_WithMeters()
@@ -96,20 +96,20 @@ namespace Shapefile_geometry_calculator_tests
             mockFolderReader.Setup(fr => fr.GetAllShpFromFolder(folder))
                             .ReturnsAsync(shapeFiles);
 
-            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomerty(shapeFiles))
+            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles))
                                        .ReturnsAsync(polygonResults);
 
-            mockResultConverter.Setup(rc => rc.ConvertPolygonResult(polygonResults, It.IsAny<Enum>()))
+            mockResultConverter.Setup(rc => rc.ConvertPolygonResultAsync(polygonResults, It.IsAny<Enum>()))
                                .ReturnsAsync(convertedResults);
 
             // Act
-            var result = await calculationManager.DoCalculation(folder, GeometryType.Polygon, AreaMeasure.SqrMeter);
+            var result = await calculationManager.DoCalculationAsync(folder, GeometryType.Polygon, AreaMeasure.SqrMeter);
 
             // Assert
             Assert.Equal(convertedResults, result);
             mockFolderReader.Verify(fr => fr.GetAllShpFromFolder(folder), Times.Once);
-            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolygonGeomerty(shapeFiles), Times.Once);
-            mockResultConverter.Verify(rc => rc.ConvertPolygonResult(polygonResults, AreaMeasure.SqrMeter), Times.Once);
+            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles), Times.Once);
+            mockResultConverter.Verify(rc => rc.ConvertPolygonResultAsync(polygonResults, AreaMeasure.SqrMeter), Times.Once);
         }
 
         [Fact]
@@ -124,20 +124,20 @@ namespace Shapefile_geometry_calculator_tests
             mockFolderReader.Setup(fr => fr.GetAllShpFromFolder(folder))
                             .ReturnsAsync(shapeFiles);
 
-            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolylineGeomerty(shapeFiles))
+            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolylineGeomertyAsync(shapeFiles))
                                        .ReturnsAsync(polylineResults);
 
-            mockResultConverter.Setup(rc => rc.ConvertPolylineResult(polylineResults, It.IsAny<Enum>()))
+            mockResultConverter.Setup(rc => rc.ConvertPolylineResultAsync(polylineResults, It.IsAny<Enum>()))
                                .ReturnsAsync(convertedResults);
 
             // Act
-            var result = await calculationManager.DoCalculation(folder, GeometryType.Polyline, LenghtMeasure.Meter);
+            var result = await calculationManager.DoCalculationAsync(folder, GeometryType.Polyline, LenghtMeasure.Meter);
 
             // Assert
             Assert.Equal(convertedResults, result);
             mockFolderReader.Verify(fr => fr.GetAllShpFromFolder(folder), Times.Once);
-            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolylineGeomerty(shapeFiles), Times.Once);
-            mockResultConverter.Verify(rc => rc.ConvertPolylineResult(polylineResults, LenghtMeasure.Meter), Times.Once);
+            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolylineGeomertyAsync(shapeFiles), Times.Once);
+            mockResultConverter.Verify(rc => rc.ConvertPolylineResultAsync(polylineResults, LenghtMeasure.Meter), Times.Once);
         }
         [Fact]
         public async Task DoCalculation_PolylineGeometryType_CallsCorrectMethods_WithKilometers()
@@ -151,20 +151,20 @@ namespace Shapefile_geometry_calculator_tests
             mockFolderReader.Setup(fr => fr.GetAllShpFromFolder(folder))
                             .ReturnsAsync(shapeFiles);
 
-            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolylineGeomerty(shapeFiles))
+            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolylineGeomertyAsync(shapeFiles))
                                        .ReturnsAsync(polylineResults);
 
-            mockResultConverter.Setup(rc => rc.ConvertPolylineResult(polylineResults, It.IsAny<Enum>()))
+            mockResultConverter.Setup(rc => rc.ConvertPolylineResultAsync(polylineResults, It.IsAny<Enum>()))
                                .ReturnsAsync(convertedResults);
 
             // Act
-            var result = await calculationManager.DoCalculation(folder, GeometryType.Polyline, LenghtMeasure.Kilometer);
+            var result = await calculationManager.DoCalculationAsync(folder, GeometryType.Polyline, LenghtMeasure.Kilometer);
 
             // Assert
             Assert.Equal(convertedResults, result);
             mockFolderReader.Verify(fr => fr.GetAllShpFromFolder(folder), Times.Once);
-            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolylineGeomerty(shapeFiles), Times.Once);
-            mockResultConverter.Verify(rc => rc.ConvertPolylineResult(polylineResults, LenghtMeasure.Kilometer), Times.Once);
+            mockShapeGeometryCalculator.Verify(sgc => sgc.CalculatePolylineGeomertyAsync(shapeFiles), Times.Once);
+            mockResultConverter.Verify(rc => rc.ConvertPolylineResultAsync(polylineResults, LenghtMeasure.Kilometer), Times.Once);
         }
 
         [Fact]
@@ -178,7 +178,7 @@ namespace Shapefile_geometry_calculator_tests
 
             // Act & Assert
             await Assert.ThrowsAsync<UnauthorizedAccessException>(() =>
-                calculationManager.DoCalculation(folder, GeometryType.Polygon, LenghtMeasure.Kilometer));
+                calculationManager.DoCalculationAsync(folder, GeometryType.Polygon, LenghtMeasure.Kilometer));
         }
         [Fact]
         public async Task DoCalculation_ShapeGeometryCalculatorThrowsException_HandlesException()
@@ -190,12 +190,12 @@ namespace Shapefile_geometry_calculator_tests
             mockFolderReader.Setup(fr => fr.GetAllShpFromFolder(folder))
                             .ReturnsAsync(shapeFiles);
 
-            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomerty(shapeFiles))
+            mockShapeGeometryCalculator.Setup(sgc => sgc.CalculatePolygonGeomertyAsync(shapeFiles))
                                        .ThrowsAsync(new Exception("Calculation error"));
 
             // Act & Assert
             await Assert.ThrowsAsync<Exception>(() =>
-                calculationManager.DoCalculation(folder, GeometryType.Polygon, LenghtMeasure.Kilometer));
+                calculationManager.DoCalculationAsync(folder, GeometryType.Polygon, LenghtMeasure.Kilometer));
         }
     }
 }

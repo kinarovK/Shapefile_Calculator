@@ -7,7 +7,7 @@ namespace Shapefile_geometry_calculator.Model
 {
     public class ReportCalculator : IReportCalculator
     {
-        public async Task<ReportResult_Model> ComputeReport(List<Result_Model> input)
+        public async Task<ReportResult_Model> ComputeReportAsync(List<Result_Model> input)
         {
             var result = new ReportResult_Model();
             var sortedNumbers = new List<double>();

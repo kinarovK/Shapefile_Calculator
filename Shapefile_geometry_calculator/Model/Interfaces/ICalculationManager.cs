@@ -8,6 +8,6 @@ namespace Shapefile_geometry_calculator.Model
 {
     public interface ICalculationManager
     {
-        Task<List<Result_Model>> DoCalculation(string folder, GeometryType geometryType, Enum measureType);
+        Task<List<Result_Model>> DoCalculationAsync(string folder, GeometryType geometryType, Enum measureType);
     }
 }

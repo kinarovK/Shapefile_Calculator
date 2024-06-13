@@ -12,7 +12,7 @@ namespace Shapefile_geometry_calculator.Model
     [ExcludeFromCodeCoverage]
     public class ShapeGeometryCalculator : IShapeGeometryCalculator
     {
-        public async Task<List<Result_Model>> CalculatePolylineGeomerty(List<string> shapeFiles)
+        public async Task<List<Result_Model>> CalculatePolylineGeomertyAsync(List<string> shapeFiles)
         {
             var result = new List<Result_Model>();
             var tasks = shapeFiles.Select(async shpPath =>
@@ -66,7 +66,7 @@ namespace Shapefile_geometry_calculator.Model
         }
            
           
-        public async Task<List<Result_Model>> CalculatePolygonGeomerty(List<string> shapeFiles)
+        public async Task<List<Result_Model>> CalculatePolygonGeomertyAsync(List<string> shapeFiles)
         {
             var result = new List<Result_Model>();
             var tasks = shapeFiles.Select(async shpPath =>
